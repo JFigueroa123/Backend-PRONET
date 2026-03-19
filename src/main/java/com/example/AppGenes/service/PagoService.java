@@ -20,11 +20,11 @@ public class PagoService {
     private LogPagosService logPagosService; // inyectas el servicio
 
     public PagoResponseDTO pago(PagoRequestDTO pago) {
-        procesarPago(pago.stiPin, pago.strIdentificador01, pago.strIdentificador02, pago.strIdentificador03);
+        procesarPago(pago.strPin, pago.strIdentificador01, pago.strIdentificador02, pago.strIdentificador03, pago.dblCashAmount);
         return pagoClient.pago(pago);
     }
 
-    public void procesarPago(String ref, String id01, String id02, String id03) {
+    public void procesarPago(String ref, String id01, String id02, String id03, double monto) {
 
         logpagos pago = new logpagos();
         pago.setPingRef(ref);
@@ -32,6 +32,7 @@ public class PagoService {
         pago.setId02(id02);
         pago.setId03(id03);
         pago.setFecha(LocalDate.now());
+        pago.setMonto(monto);
 
         logPagosService.guardar(pago);
     }

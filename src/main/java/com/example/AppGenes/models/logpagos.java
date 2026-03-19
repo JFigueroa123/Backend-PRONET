@@ -22,4 +22,5 @@ public class logpagos {
     private String id02;
     private String id03;
     private LocalDate fecha;
+    public Double monto;
 }

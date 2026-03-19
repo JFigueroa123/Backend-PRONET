@@ -12,3 +12,8 @@ public class PagoResponseDTO {
     private Double dblCommissionFee;
     private String strName;
 }
+
+
+
+
+

@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter @Setter
 public class PagoRequestDTO {
-    public String stiPin;
+    public String strPin;
     public String strIdentificador01;
     public String strIdentificador02;
     public String strIdentificador03;
